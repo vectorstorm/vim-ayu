@@ -18,7 +18,7 @@ let s:palette.bg        = {'dark': "#0F1419",  'light': "#FAFAFA",  'mirage': "#
 
 let s:palette.comment   = {'dark': "#5C6773",  'light': "#ABB0B6",  'mirage': "#5C6773"}
 let s:palette.markup    = {'dark': "#F07178",  'light': "#F07178",  'mirage': "#F07178"}
-let s:palette.constant  = {'dark': "#FFEE99",  'light': "#A37ACC",  'mirage': "#D4BFFF"}
+let s:palette.constant  = {'dark': "#FF2222",  'light': "#A37ACC",  'mirage': "#D4BFFF"}
 let s:palette.operator  = {'dark': "#E7C547",  'light': "#E7C547",  'mirage': "#80D4FF"}
 let s:palette.tag       = {'dark': "#36A3D9",  'light': "#36A3D9",  'mirage': "#5CCFE6"}
 let s:palette.regexp    = {'dark': "#95E6CB",  'light': "#4CBF99",  'mirage': "#95E6CB"}
@@ -35,6 +35,12 @@ let s:palette.line      = {'dark': "#151A1E",  'light': "#F3F3F3",  'mirage': "#
 let s:palette.selection = {'dark': "#253340",  'light': "#F0EEE4",  'mirage': "#343F4C"}
 let s:palette.fg        = {'dark': "#E6E1CF",  'light': "#5C6773",  'mirage': "#D9D7CE"}
 let s:palette.fg_idle   = {'dark': "#3E4B59",  'light': "#828C99",  'mirage': "#607080"}
+
+let s:palette.diffadd      = {'dark': "#008800",  'light': "#00FF00",  'mirage': "#00FF00"}
+let s:palette.diffdelete   = {'dark': "#880000",  'light': "#FF0000",  'mirage': "#FF0000"}
+let s:palette.black        = {'dark': "#000000",  'light': "#000000",  'mirage': "#000000"}
+let s:palette.diffchange   = {'dark': "#880088",  'light': "#880088",  'mirage': "#880088"}
+let s:palette.difftext     = {'dark': "#FF00FF",  'light': "#FF00FF",  'mirage': "#FF00FF"}
 
 "}}}
 
@@ -92,9 +98,10 @@ exe "hi! CursorLineNr"  .s:fg_accent      .s:bg_line        .s:fmt_none
 exe "hi! LineNr"        .s:fg_guide       .s:bg_none        .s:fmt_none
 
 exe "hi! Directory"     .s:fg_fg_idle     .s:bg_none        .s:fmt_none
-exe "hi! DiffAdd"       .s:fg_string      .s:bg_panel       .s:fmt_none
-exe "hi! DiffChange"    .s:fg_tag         .s:bg_panel       .s:fmt_none
-exe "hi! DiffText"      .s:fg_fg          .s:bg_panel       .s:fmt_none
+exe "hi! DiffAdd"       .s:fg_black       .s:bg_diffadd     .s:fmt_none
+exe "hi! DiffDelete"    .s:fg_black       .s:bg_diffdelete  .s:fmt_none
+exe "hi! DiffChange"    .s:fg_tag         .s:bg_diffchange  .s:fmt_none
+exe "hi! DiffText"      .s:fg_fg          .s:bg_diffchange  .s:fmt_ital
 exe "hi! ErrorMsg"      .s:fg_fg          .s:bg_error       .s:fmt_stnd
 exe "hi! VertSplit"     .s:fg_bg          .s:bg_none        .s:fmt_none
 exe "hi! Folded"        .s:fg_fg_idle     .s:bg_panel       .s:fmt_none
@@ -136,7 +143,7 @@ hi LongLineWarning  guifg=NONE        guibg=#371F1C     gui=underline ctermfg=NO
 
 " Generic Syntax Highlighting: (see :help group-name)"{{{
 " ----------------------------------------------------------------------------
-exe "hi! Comment"         .s:fg_comment   .s:bg_none        .s:fmt_none
+exe "hi! Comment"         .s:fg_comment   .s:bg_none        .s:fmt_ital
 
 exe "hi! Constant"        .s:fg_constant  .s:bg_none        .s:fmt_none
 exe "hi! String"          .s:fg_string    .s:bg_none        .s:fmt_none
