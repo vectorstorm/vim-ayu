@@ -16,8 +16,10 @@ let s:palette = {}
 
 let s:palette.bg        = {'dark': "#0F1419",  'light': "#FAFAFA",  'mirage': "#212733"}
 
+" TODO
+
 let s:palette.comment   = {'dark': "#5C6773",  'light': "#ABB0B6",  'mirage': "#5C6773"}
-let s:palette.markup    = {'dark': "#F07178",  'light': "#F07178",  'mirage': "#F07178"}
+let s:palette.markup    = {'dark': "#ff1010",  'light': "#F07178",  'mirage': "#F07178"}
 let s:palette.constant  = {'dark': "#FF2222",  'light': "#A37ACC",  'mirage': "#D4BFFF"}
 let s:palette.operator  = {'dark': "#E7C547",  'light': "#E7C547",  'mirage': "#80D4FF"}
 let s:palette.tag       = {'dark': "#36A3D9",  'light': "#36A3D9",  'mirage': "#5CCFE6"}
@@ -144,6 +146,7 @@ hi LongLineWarning  guifg=NONE        guibg=#371F1C     gui=underline ctermfg=NO
 " Generic Syntax Highlighting: (see :help group-name)"{{{
 " ----------------------------------------------------------------------------
 exe "hi! Comment"         .s:fg_comment   .s:bg_none        .s:fmt_ital
+" exe "hi! Comment"         .s:fg_comment   .s:bg_none        .s:fmt_none
 
 exe "hi! Constant"        .s:fg_constant  .s:bg_none        .s:fmt_none
 exe "hi! String"          .s:fg_string    .s:bg_none        .s:fmt_none
